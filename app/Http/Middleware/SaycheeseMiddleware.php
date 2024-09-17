@@ -1,8 +1,10 @@
+<!-- php artisan make:middleware SaycheeseMiddleware -->
 <?php
 
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -15,6 +17,10 @@ class SaycheeseMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        return $next($request);
+        dump("Hey chess midleware");
+        // return $next($request);   this is calling for next middleware , if we comment out need to put like bottom (otherwise error beacuse no calling for next middleware)
+        return new JsonResponse([
+            'data' => 'cheeesee',
+        ]);
     }
 }
