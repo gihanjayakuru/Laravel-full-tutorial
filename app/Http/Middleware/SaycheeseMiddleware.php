@@ -16,11 +16,18 @@ class SaycheeseMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        dump("Hey chess midleware");
+        // dump("Hey chess midleware");
         return $next($request);
         // return $next($request);   this is calling for next middleware , if we comment out need to put like bottom (otherwise error beacuse no calling for next middleware)
         // return new JsonResponse([
         //     'data' => 'cheeesee',
         // ]);
+    }
+
+
+    //this will terminate when start show bottom dump string
+    public function terminate($request, $response)
+    {
+        dump("terminate midleware");
     }
 }
