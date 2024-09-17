@@ -1,1 +1,31 @@
 php artisan make:provider GeolocationServiceProvider
+
+php artisan tinker   -> #php artisan tinker is a powerful command-line tool provided by Laravel that allows you to interact with your Laravel application in an interactive shell.
+
+//test Geolocation service reserved correctly way 1
+command-> app(\App\Services\Geolocation\Geolocation::class)
+
+result-> > app(\App\Services\Geolocation\Geolocation::class)                                                                                                    
+           = App\Services\Geolocation\Geolocation {#5138}
+
+//test Geolocation service reserved correctly way2
+command-> app()->make(\App\Services\Geolocation\Geolocation::class)
+
+result-> app()->make(\App\Services\Geolocation\Geolocation::class)                                                                                            
+         = App\Services\Geolocation\Geolocation {#5152}
+
+//test dummy value in the function
+command->  app()->make(\App\Services\Geolocation\Geolocation::class)->search('abc')
+result-> =      [    
+                123,
+                123,
+            ]
+
+
+##Service Providers
+
+    -Service Providers are classes that instruct Laravel on how to instantiate a service class.
+    -The register() method is where you define your class binding.
+    -The boot() method is called after all Services are registered.
+    -We need to put our Service Provider in the ‘provider’ array in the app config file to activate it. Otherwise, Laravel will ignore it.
+    -The Service can resolve using the ‘Automatic Resolution’ features.

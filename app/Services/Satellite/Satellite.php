@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\Satelite;
+namespace App\Services\Satellite;
 
 class Satellite
 {

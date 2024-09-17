@@ -3,7 +3,8 @@
 namespace App\Services\Geolocation;
 
 use App\Services\Map\Map;
-use App\Services\Satelite\Satellite;
+use App\Services\Satellite\Satellite;
+
 
 class Geolocation
 {
@@ -12,9 +13,8 @@ class Geolocation
     private $map;
     private $satellite;
 
-    public function __constructor(Map $map, Satellite $satellite)
+    public function __construct(Map $map, Satellite $satellite)
     {
-
         $this->map = $map;
         $this->satellite = $satellite;
     }
