@@ -1,0 +1,10 @@
+##Middleware
+
+-Middleware are functions that run before the request hits the router.
+-The handle() method contains the main logic of the middleware, while the terminate() method contains the “clean up” logic just before the app is shut down.
+-The Kernel is responsible to pass the request to the router through middleware.
+-The Kernel bootstraps the application by setting up:
+            *Environment Variable
+            *Configuration
+            *Exception Handling
+            *Register facade and Service Provider
