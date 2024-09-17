@@ -1,4 +1,3 @@
-<!-- php artisan make:middleware SaycheeseMiddleware -->
 <?php
 
 namespace App\Http\Middleware;
@@ -18,9 +17,10 @@ class SaycheeseMiddleware
     public function handle(Request $request, Closure $next): Response
     {
         dump("Hey chess midleware");
+        return $next($request);
         // return $next($request);   this is calling for next middleware , if we comment out need to put like bottom (otherwise error beacuse no calling for next middleware)
-        return new JsonResponse([
-            'data' => 'cheeesee',
-        ]);
+        // return new JsonResponse([
+        //     'data' => 'cheeesee',
+        // ]);
     }
 }
