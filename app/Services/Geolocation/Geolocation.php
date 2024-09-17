@@ -8,9 +8,14 @@ use App\Services\Satellite\Satellite;
 
 class Geolocation
 {
-
-
+    /**
+     * @var Map
+     */
     private $map;
+    /**
+     * @var Satellite
+     */
+
     private $satellite;
 
     public function __construct(Map $map, Satellite $satellite)

@@ -1,0 +1,13 @@
+##Facade
+
+-Facade allows us to call Service Instance method statically, providing us a convenient way to call Service method.
+-You can think of Facade as the static counterpart of a Service class.
+
+php artisan tinker
+Psy Shell v0.12.4 (PHP 8.1.17 — cli) by Justin Hileman
+> app(\App\Playground::class)                                                                                                                          
+array:2 [
+  0 => 123
+  1 => 123
+] // app\Playground.php:17
+= App\Playground {#5142}
